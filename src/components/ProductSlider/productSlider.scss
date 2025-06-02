@@ -1,0 +1,25 @@
+.productSlider{
+    .swiper-wrapper{
+        padding: 15px !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+}
+
+.pSlider{
+    .swiper-button-prev{
+        left: 10px !important;
+    }
+    .swiper-button-next{
+        right: 10px !important;
+    }
+    .swiper-button-prev,.swiper-button-next{
+        width: 40px;
+        height: 40px;
+        min-width: 30px;
+    }
+    .swiper-button-prev:after,.swiper-button-next:after{
+        font-size: 15px !important;
+        color: black;
+    }
+}
