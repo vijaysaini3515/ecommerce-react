@@ -10,7 +10,7 @@ const BlogItem = () => {
         <div className="imageWrapper w-full overflow-hidden rounded-md cursor-pointer relative">
          <img src={subBanner1} className='w-full transition-all group-hover:scale-105 group-hover:rotate-1' alt="blog-img" />
          <span className='absolute bottom-[10px] right-[10px] flex items-center gap-1 bg-[var(--primary)] p-1 text-white rounded-md text-[12px] font-[500] '>
-            <FaRegClock /> 1 june 2025
+            <FaRegClock /> 1 june 2024
          </span>
         </div>
         <div className="info py-4">
