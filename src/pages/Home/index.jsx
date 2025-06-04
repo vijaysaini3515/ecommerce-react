@@ -15,6 +15,7 @@ import 'swiper/css/pagination';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import BlogItem from "../../components/BlogItem";
+import Footer from "../../components/Footer";
 
 
 const Home = () =>{
@@ -166,7 +167,9 @@ const Home = () =>{
                         </SwiperSlide>
                     </Swiper>     
                 </div>
-            </section>   
+            </section>  
+
+            <Footer />
 
 
 
