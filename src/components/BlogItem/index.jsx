@@ -13,10 +13,15 @@ const BlogItem = () => {
             <FaRegClock /> 1 june 2024
          </span>
         </div>
-        <div className="info py-4">
+        {/* <div className="info py-4">
         <Link to="/"><h2 className='link text-[15px] font-[600] text-black text-left'>Lorem ipsum dolor sit amet.</h2></Link>
           <h3 className='mb-2 text-[13px] font-[500] text-[rgba(0,0,0,0.8)] text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore repellat deleniti soluta tempore vitae illum....</h3>
           <Link to="/" className='link text-left flex flex-start items-center gap-2 text-[14px] font-[500] underline'>Read More <FaHandPointRight /></Link>
+        </div> */}
+        <div className="info py-4">
+        <h2 className='link text-[15px] font-[600] text-black text-left'>Lorem ipsum dolor sit amet.</h2>
+          <h3 className='mb-2 text-[13px] font-[500] text-[rgba(0,0,0,0.8)] text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore repellat deleniti soluta tempore vitae illum....</h3>
+          <h4 className='link text-left flex flex-start items-center gap-2 text-[14px] font-[500] underline'>Read More <FaHandPointRight /></h4>
         </div>
     </div>
   )

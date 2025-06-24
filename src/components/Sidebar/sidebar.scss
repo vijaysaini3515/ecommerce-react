@@ -1,0 +1,26 @@
+.sidebar {
+    .scroll {
+      max-height: 200px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 5px !important;
+    }
+    ::-webkit-scrollbar-thumb{background-color: #ff5252; border-radius: 5px;}
+    ::-webkit-scrollbar-track{background-color: #000 !important;border-radius: 10px;}
+}
+
+.range-slider {
+  background:#ccc !important;
+  height: 5px !important;
+}
+.range-slider .range-slider__thumb{
+  background-color: #ff5252 !important;
+  height: 15px !important;
+  width: 15px !important;
+}
+.range-slider .range-slider__range{
+  background-color: #ff5252 !important;
+}
+

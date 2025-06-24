@@ -3,6 +3,7 @@ import './home.scss'
 import AddBannerSlider from "../../components/AddBannerSlider";
 import HomeCartSlider from "../../components/HomeCartSlider";
 import HomeSlider from "../../components/HomeSlider";
+import HomeSliderV2 from '../../components/HomeSliderV2'
 import { FaShippingFast } from "react-icons/fa";
 
 import Tabs from '@mui/material/Tabs';
@@ -12,10 +13,16 @@ import ProductSlider from "../../components/ProductSlider";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import BlogItem from "../../components/BlogItem";
 import Footer from "../../components/Footer";
+import BannerBoxV2 from "../../components/BannerBoxV2";
+
+import bannerImg1 from '../../assets/images2/banner3.jpg'
+import bannerImg2 from '../../assets/images2/banner4.jpg'
+import AddBannerSliderV2 from "../../components/AddBannerSliderV2";
+
 
 
 const Home = () =>{
@@ -32,6 +39,19 @@ const Home = () =>{
     return(
         <>  
            <HomeSlider />
+           
+           <section className="py-6">
+              <div className="container flex gap-5 ">
+                <div className="part1 w-[70%]">
+                    <HomeSliderV2 />
+                </div>
+                <div className="part2 w-[30%] flex flex-col gap-3 justify-between">
+                    <BannerBoxV2 pic={bannerImg1} position="left"/>
+                    <BannerBoxV2 pic={bannerImg2} position="right" />
+                </div>
+              </div>
+           </section>
+           
            <HomeCartSlider />
 
            <section className="bg-white py-8">
@@ -76,6 +96,7 @@ const Home = () =>{
 
             <section className="bg-white py-12 pt-2 ">
                 <div className="container">
+                <AddBannerSlider items={4} />
                     <div className="freeShipping mb-5 py-3 w-[80%] m-auto p-4  border-2 border-[#ff5252] rounded-md  flex items-center justify-between">
 
                         <div className="col1 flex items-center gap-4">
@@ -90,8 +111,7 @@ const Home = () =>{
                         <p className="font-bold text-[25px]">- Only $200*</p>
 
                     </div>
-                    <AddBannerSlider items={4} />
-
+                    <AddBannerSliderV2 item={4} />
                 </div>
             </section>
 
@@ -169,12 +189,6 @@ const Home = () =>{
                 </div>
             </section>  
 
-            <Footer />
-
-
-
-           
-            <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
         </>
     )
 }

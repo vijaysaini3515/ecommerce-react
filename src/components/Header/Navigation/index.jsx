@@ -30,13 +30,15 @@ const Navigation = () => {
 
                     <div className='col_2 w-[60%]'>
                         <ul className='nav flex items-center gap-1'>
+
                             <li className='list-none'>
                                 <Link to="/" className="link transition text-[14px] font-[500]">
                                     <Button className='link transition !font-[500] !text-[rgba(0,0,0,0.5)] hover:!text-[red] !normal-case'>Home</Button>
                                 </Link>
                             </li>
+                            {/*  */}
                             <li className='list-none relative'>
-                                <Link to="/" className="link transition text-[14px] font-[500]">
+                                <Link to="/productListing" className="link transition text-[14px] font-[500]">
                                     <Button className='link transition !font-[500] !text-[rgba(0,0,0,0.5)] hover:!text-[red] !normal-case'>Fashion</Button>
                                 </Link>
                                 <div className='submenu absolute top-[100%] left-[0%] min-w-[150px] bg-white shadow-md opacity-0 transition-all'>
@@ -104,6 +106,7 @@ const Navigation = () => {
                                     </ul>
                                 </div>
                             </li>
+                            {/*  */}
                             <li className='list-none'>
                                 <Link to="/" className="link transition text-[14px] font-[500]">
                                     <Button className='link transition !font-[500] !text-[rgba(0,0,0,0.5)] hover:!text-[red] !normal-case'>Electronic</Button>

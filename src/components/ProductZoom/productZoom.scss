@@ -1,0 +1,40 @@
+.zoomProductSlider{
+    .swiper-slide{
+        // height: 100px !important;
+    }
+    
+    
+    .swiper-button-next{
+        bottom: 0px !important;
+        right: inherit !important;
+        top: inherit !important;
+        width: 100% !important;
+        height: 30px !important;
+        border-radius: 0px !important;
+        background-color: rgb(255, 255, 255) !important;
+        z-index: 999 !important;
+        &:hover{
+            background-color: #FF5252 !important;
+        }
+        &::after{
+            transform: rotate(90deg) !important;
+        }
+    }
+    .swiper-button-prev{
+        top: 20px !important;
+        left: inherit !important;
+        bottom: inherit !important;
+        width: 100% !important;
+        height: 30px !important;
+        border-radius: 0px !important;
+        background-color: white !important;
+        z-index: 999 !important;
+        &:hover{
+            background-color: #FF5252 !important;
+        }
+        &::after{
+            transform: rotate(90deg) !important;
+        }
+    }
+
+}

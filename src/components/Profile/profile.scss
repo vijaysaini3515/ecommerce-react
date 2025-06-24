@@ -1,0 +1,34 @@
+.myAccountTabs {
+    li {
+      a {
+        position: relative;
+        display: block;
+
+        &::before {
+          content: '';
+          width: 3px;
+          height: 50%;
+          position: absolute;
+          top: 50%;
+          left: 0px;
+          background-color: #FF5252;
+          transition: all 0.3s ease-in-out;
+          opacity: 0;
+        }
+
+        &.active{
+            &::before {
+                height: 100%;
+                opacity: 1;
+                top: 0;
+            }
+            button svg{
+                color:#FF5252 !important;
+                opacity: 1 !important;
+            }
+        }
+
+      }
+    }
+  }
+  

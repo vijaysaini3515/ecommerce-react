@@ -4,11 +4,17 @@ import './addBannerSlider.scss'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Navigation, Autoplay } from 'swiper/modules';
+
 import bannerImg1 from '../../assets/images2/banner1.webp'
 import bannerImg2 from '../../assets/images2/banner2.webp'
 import bannerImg3 from '../../assets/images2/banner3.webp'
 import bannerImg4 from '../../assets/images2/banner4.webp'
-// import bannerImg5 from '../../assets/images2/banner5.webp'
+
+// import bannerImg1 from '../../assets/images2/banner/banner1.webp'
+// import bannerImg2 from '../../assets/images2/banner/banner2.webp'
+// import bannerImg3 from '../../assets/images2/banner/banner3.webp'
+// import bannerImg4 from '../../assets/images2/banner/banner4.webp'
+
 import BannerBox from '../BannerBox';
 
 const  AddBannerSlider =({items})=>{

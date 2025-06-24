@@ -1,0 +1,60 @@
+.homeSliderV2{
+    .swiper-button-prev,.swiper-button-next{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ff5252;
+        border-radius: 5px;
+        width: 25px !important;
+        height: 30px;
+        min-width: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6) !important;
+    }
+    .swiper-button-prev:after,.swiper-button-next:after{
+        font-size: 15px !important;
+        color: black;
+    
+    }
+}
+
+
+
+.swiper-pagination-bullet-active{
+    background-color: #ff5252 !important;
+}
+
+
+.homeSliderV2 .swiper-slide-active .info{
+    right: 0px !important;
+    opacity: 1 !important;
+}
+.homeSliderV2 .swiper-slide-active .info h2{
+    right: 0px !important;
+    opacity: 1 !important;
+}
+.homeSliderV2 .swiper-slide-active .info h4{
+    right: 0px !important;
+    opacity: 1 !important;
+}
+.homeSliderV2 .swiper-slide-active .info h3{
+    right: 0px !important;
+    opacity: 1 !important;
+}
+
+.homeSliderV2 .swiper-slide-active .info .btn_{
+    right: 0px !important;
+    opacity: 1 !important;
+}
+
+.homeSliderV2 .info h2{
+    transition-duration: 1s;
+}
+.homeSliderV2 .info h4{
+    transition-duration: 1.2s;
+}
+.homeSliderV2 .info h3{
+    transition-duration: 1.3s;
+}
+.homeSliderV2 .info .btn_{
+    transition-duration: 1.5s;
+}
