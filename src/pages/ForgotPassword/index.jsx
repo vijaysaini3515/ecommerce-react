@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const ForgotPassword = () => {
   const navigate =useNavigate()
   const [showPassword, setShowPassword] = useState(false);
-  const [formData,setFormData] = useState({
-    email:'',
-    password:''
-  });
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);  
 
   const forgetPassword =()=>{
     navigate('/verify')
@@ -17,25 +14,14 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center p-10">
       <div className="bg-white w-[400px]  shadow-lg rounded-lg flex flex-col justify-center p-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Login</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Forgot Password</h2>
 
         <form className="space-y-3">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email address
-            </label>
-            <input
-              type="email"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="you@example.com"
-              required
-              name='email'
-            />
-          </div>
+          
 
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
+              New Password
             </label>
             <div className="mt-1 relative">
               <input
@@ -54,6 +40,28 @@ const Login = () => {
             </div>
           </div>
 
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              Confirm Password
+            </label>
+            <div className="mt-1 relative">
+              <input
+                type={showConfirmPassword ? 'text' : 'password'}
+                className="block w-full px-4 py-2 pr-10 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                placeholder="••••••••"
+                required
+                name='password'
+              />
+              <div
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 cursor-pointer"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </div>
+            </div>
+            
+          </div>
+
          
 
           <div className="flex items-center justify-between">
@@ -61,11 +69,8 @@ const Login = () => {
               type="submit"
               className="btn-org"
             >
-              Log In
+              Change Password
             </button>
-            <p onClick={forgetPassword} className="text-[var(--primary)] cursor-pointer">
-            Forgot Password?
-          </p>
 
           </div>
         </form>
@@ -74,4 +79,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default ForgotPassword;

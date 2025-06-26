@@ -22,6 +22,7 @@ import cardImg5 from '../../assets/images2/card1.png';
 
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import CartDrawer from '../CartDrawer';
 
 const Footer = () => {
   return (
@@ -189,6 +190,8 @@ const Footer = () => {
             </div>
             
         </div>
+     <CartDrawer />
+
     </>
   ) 
 }

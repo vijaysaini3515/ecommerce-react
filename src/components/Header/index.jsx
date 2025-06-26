@@ -17,11 +17,13 @@ import { TbLogout } from "react-icons/tb";
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import Divider from '@mui/material/Divider';
+// import PersonAdd from '@mui/icons-material/PersonAdd';
+// import Settings from '@mui/icons-material/Settings';
+// import Logout from '@mui/icons-material/Logout';
+import { toggleCartDrawer } from '../../features/cartSlice/cartSlice'
+import { useDispatch } from 'react-redux';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -33,15 +35,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const Header = () => {
+    const dispatch = useDispatch(); 
     const [isLogin, setIsLogin] = useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleOpenCartDrawer = () => {
+        dispatch(toggleCartDrawer(true)); 
+      };
 
 
 
@@ -181,7 +190,7 @@ const Header = () => {
 
                             <li>
                                 <Tooltip title="Cart">
-                                    <IconButton aria-label="cart">
+                                    <IconButton aria-label="cart" onClick={handleOpenCartDrawer}>
                                         <StyledBadge sx={{ ".MuiBadge-badge": { backgroundColor: "#ff5252" } }} badgeContent={4} color="secondary">
                                             <MdOutlineShoppingCart />
                                         </StyledBadge>
@@ -190,6 +199,7 @@ const Header = () => {
                             </li>
 
                         </ul>
+                        
                     </div>
                 </div>
             </div>
