@@ -14,6 +14,7 @@ import Profile from './components/Profile'
 import MyList from './components/MyList'
 import MyOrder from './components/MyOrder'
 import CartDrawer from './components/CartDrawer'
+import Checkout from './pages/Checkout';
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/my-account" element={<Profile />} />
         <Route path="/my-list" element={<MyList />} />
         <Route path="/my-orders" element={<MyOrder />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
    </BrowserRouter>
