@@ -22,11 +22,13 @@ import BannerBoxV2 from "../../components/BannerBoxV2";
 import bannerImg1 from '../../assets/images2/banner3.jpg'
 import bannerImg2 from '../../assets/images2/banner4.jpg'
 import AddBannerSliderV2 from "../../components/AddBannerSliderV2";
+import { useSelector } from "react-redux";
 
 
 
 const Home = () =>{
     const [value, setValue] = useState(0);
+    const windowWidth = useSelector((state)=>state.window.width)
 
     const handleChange = (event ,newValue) => {
       setValue(newValue);
@@ -40,28 +42,18 @@ const Home = () =>{
         <>  
            <HomeSlider />
            
-           <section className="py-6">
-              <div className="container flex gap-5 ">
-                <div className="part1 w-[70%]">
-                    <HomeSliderV2 />
-                </div>
-                <div className="part2 w-[30%] flex flex-col gap-3 justify-between">
-                    <BannerBoxV2 pic={bannerImg1} position="left"/>
-                    <BannerBoxV2 pic={bannerImg2} position="right" />
-                </div>
-              </div>
-           </section>
+           
            
            <HomeCartSlider />
 
-           <section className="bg-white py-8">
+           <section className="bg-white pt-4">
             <div className="container">
-                <div className="flex items-center justify-between">
-                    <div className="leftSec">
-                        <h3 className="text-[22px] font-[600]">Popular Products</h3>
-                        <p className="text-[14px] font-[400]">Do not miss the current offer until the end of March</p>
+                <div className="flex flex-col lg:flex-row items-center justify-between ">
+                    <div className="leftSec w-full lg:w-[40%]">
+                        <h3 className="text-[14px] sm:text-[14px] md:text-[22px] lg:text-[20px] font-[600]">Popular Products</h3>
+                        <p className="text-[12px] sm:text-[14px] md:text-[13px] lg:text-[14px] font-[400]">Do not miss the current offer until the end of March</p>
                     </div>
-                    <div className="rightSec w-[60%]">
+                    <div className="rightSec w-full lg:w-[60%]">
                         <Tabs
                             value={value}
                             onChange={handleChange}
@@ -93,36 +85,48 @@ const Home = () =>{
             </div>
            </section>
 
-
-            <section className="bg-white py-12 pt-2 ">
-                <div className="container">
-                <AddBannerSlider items={4} />
-                    <div className="freeShipping mb-5 py-3 w-[80%] m-auto p-4  border-2 border-[#ff5252] rounded-md  flex items-center justify-between">
-
-                        <div className="col1 flex items-center gap-4">
-                            <FaShippingFast className="text-[50px]" />
-                            <span className="text-[18px] font-[600] uppercase">Free shipping</span>
-                        </div>
-
-                        <div className="col2 font-[500]">
-                            <p className="">Free Delivery Now On Your First Order and over $200</p>
-                        </div>
-
-                        <p className="font-bold text-[25px]">- Only $200*</p>
-
+           <section className="p-2 lg:p-6">
+                <div className="container flex flex-col lg:flex-row gap-5 ">
+                    <div className="part1 w-full lg:w-[70%]">
+                        <HomeSliderV2 />
                     </div>
-                    <AddBannerSliderV2 item={4} />
+                    <div className="part2 w-full lg:w-[30%] flex flex-col md:flex-row lg:flex-col gap-3 justify-between">
+                        <BannerBoxV2 pic={bannerImg1} position="left"/>
+                        <BannerBoxV2 pic={bannerImg2} position="right" />
+                    </div>
                 </div>
             </section>
+
+
+            <section className="bg-white  pb-0 lg:py-4 lg:pt-8  pt-2 ">
+                <div className="container">
+                    <div className="freeShipping mb-5 py-3 w-full md:w-[80%] m-auto p-4  border-2 border-[#ff5252] rounded-md  flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+                        <div className="col1 flex items-center gap-4">
+                            <FaShippingFast className="text-[30px] lg:text-[50px]" />
+                            <span className="text-[16px] lg:text-[20px] font-[600] uppercase">Free shipping</span>
+                        </div>
+                        <div className="col2 font-[500]">
+                            <p className="text-[16px] text-center lg:text-[20px]">Free Delivery Now On Your First Order and over $200</p>
+                        </div>
+                        <p className="font-bold text-[20px] lg:text-[25px]">- Only $200*</p>
+                    </div>
+                </div>
+            </section>
+
+            <AddBannerSliderV2 item={4} />
+            {/* <AddBannerSlider items={4} /> */}
+
 
             <section className="py-5 pt-0 bg-white ">
                 <div className="container">
                   <h3 className="text-[22px] font-[600]">Latest Products</h3>
                   <ProductSlider items={6} />
-                  <AddBannerSlider items={3} />
+                 <AddBannerSlider items={3} />
 
                 </div>
             </section>
+
+
 
             <section className="py-5 pt-0 bg-white ">
                 <div className="container">
@@ -140,8 +144,14 @@ const Home = () =>{
                         modules={[Navigation]}
                         spaceBetween={30}
                         slidesPerView={4}
-                        navigation={true}
+                        navigation={windowWidth > 992 ? true : false}
                         loop={true}
+                        breakpoints={{
+                            330: { slidesPerView: 1, spaceBetween: 10 },
+                            550: { slidesPerView: 2, spaceBetween: 10 },
+                            900: { slidesPerView: 3, spaceBetween: 10 },
+                            1100: { slidesPerView: 4, spaceBetween: 10 },
+                          }}
                     >
                         <SwiperSlide>
                             <Link to="/">

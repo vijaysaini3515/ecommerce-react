@@ -11,7 +11,7 @@ import bannerImg2 from '../../assets/images2/banner3.jpg'
 
 const  AddBannerSliderV2 =({item})=>{
     return (
-        <>
+        <div className='p-2'>
          <Swiper
             modules={[Navigation,Autoplay]}
             spaceBetween={10}
@@ -20,6 +20,12 @@ const  AddBannerSliderV2 =({item})=>{
             autoplay={{ delay: 2500 }}
             loop={true}
             className='smlButton'
+            breakpoints={{
+                330: { slidesPerView: 1, spaceBetween: 10 },
+                550: { slidesPerView: 2, spaceBetween: 10 },
+                900: { slidesPerView: 3, spaceBetween: 10 },
+                1100: { slidesPerView: 4, spaceBetween: 10 },
+              }}
         >
             <SwiperSlide>
                 <BannerBoxV2 pic={bannerImg1} position="left" />
@@ -46,7 +52,7 @@ const  AddBannerSliderV2 =({item})=>{
                 <BannerBoxV2 pic={bannerImg2} position="left" />
             </SwiperSlide>
         </Swiper>
-        </>
+        </div>
     )
 }
 

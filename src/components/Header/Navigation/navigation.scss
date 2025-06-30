@@ -45,3 +45,25 @@
 .nav li .submenu li .submenu button:hover{
     color:#ff5252 !important;
 } 
+
+
+
+@media only screen and (min-width:320px) and (max-width:992px) {
+    .navContainer{
+        ul{
+            white-space: nowrap !important;
+            overflow-x: scroll !important;
+            overflow-y: hidden !important;
+            display: block !important;
+            text-align: center !important;
+            li{
+                display: inline-block !important;
+                vertical-align: top !important;
+                
+            }
+            &::-webkit-scrollbar{
+                display: none !important;
+            }
+        }
+    }
+}

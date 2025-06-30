@@ -14,6 +14,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { IoHeart } from "react-icons/io5";
 import { TbLogout } from "react-icons/tb";
+import { BiMenuAltLeft } from "react-icons/bi";
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -23,7 +24,7 @@ import MenuItem from '@mui/material/MenuItem';
 // import Settings from '@mui/icons-material/Settings';
 // import Logout from '@mui/icons-material/Logout';
 import { toggleCartDrawer } from '../../features/cartSlice/cartSlice'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -36,6 +37,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const Header = () => {
     const dispatch = useDispatch(); 
+    const [openCategoryPanel, setOpenCategoryPanel] = useState(false);
+    const windowWidth = useSelector((state)=>state.window.width);
     const [isLogin, setIsLogin] = useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -59,17 +62,17 @@ const Header = () => {
             <div className='top-strip p-2 border-t border-b border-gray-300 '>
                 <div className="container">
                     <div className='flex items-center justify-between'>
-                        <div className='col1 w-[50%]'>
+                        <div className='col1 w-[50%] hidden lg:block'>
                             <p className='text-[14px] text-gray-500 font-[500]'>Get up to 50% off new season styles, limited time only</p>
                         </div>
 
-                        <div className='col2  flex item-center justify-end'>
-                            <ul className='flex items-center gap-3'>
-                                <li className='list-none'> <Link to="/help-center" className='text-[13px] font-[500] transition link'>Help Center</Link>
+                        <div className='col2 flex item-center justify-between w-full lg:w-[50%] lg:justify-end'>
+                            <ul className='flex items-center gap-3 w-full justify-between lg:w-[200px]'>
+                                <li className='list-none'> <Link to="/help-center" className='text-[12px] lg:text-[13px] font-[500] transition link'>Help Center</Link>
 
                                 </li>
                                 <li className='list-none'>
-                                    <Link to="/order-tracking" className='text-[13px] font-[500] transition link'>Order Tracking</Link>
+                                    <Link to="/order-tracking" className='text-[12px] lg:text-[13px] font-[500] transition link'>Order Tracking</Link>
                                 </li>
                             </ul>
                         </div>
@@ -79,17 +82,22 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className='header border-b border-gray-300 py-4'>
+            <div className='header border-b border-gray-300 py-2 lg:py-4'>
                 <div className="container flex items-center justify-between">
-                    <div className="col1 w-[25%]">
+                    {
+                        windowWidth < 992 && (
+                            <BiMenuAltLeft onClick={()=>setOpenCategoryPanel(true)} className='h-[35px] w-[35px] m-w-[35px] rounded-full' />
+                        )
+                    }
+                    <div className="col1 w-[50%] lg:w-[25%]">
                         <Link to={"/"}> <img src={LogoImg} alt="logo" /></Link>
                     </div>
-                    <div className="col2 w-[45%]">
+                    <div className="col2 lg:w-[45%] fixed lg:static top-0 left-0 w-full h-full z-50 p-2 lg:p-0 bg-white hidden lg:block">
                         <Search />
                     </div>
-                    <div className="col3 w-[30%]  pl-8 flex items-center ">
+                    <div className="col3 w-[10%] lg:w-[30%]  pl-7 flex items-center ">
 
-                        <ul className="w-full flex items-center justify-end gap-3">
+                        <ul className="w-full flex items-center justify-end gap-2 lg:gap-3">
                             {
                                 isLogin === false ? (
                                     <li className='list-none'>
@@ -98,13 +106,20 @@ const Header = () => {
                                     </li>
                                 ) : (
                                     <>
-                                        <Button onClick={handleClick} className=' !text-[#000] myAccountWrap flex items-center gap-3 cursor-pointer'>
-                                            <Button className='!w-[40px] !min-w-[40px] !h-[40px] !rounded-full'><FaUserCircle className='text-[14px] text-[rgba(0,0,0,0.5)]' /></Button>
-                                            <div className="info flex flex-col">
-                                                <h4 className='leading-3 text-[rgba(0,0,0,0.7)] text-[14px] font-[500] mb-0 capitalize text-left justify-start'>vijay saini</h4>
-                                                <span className='text-[14px] text-[rgba(0,0,0,0.5)] font-[400] mb-0 capitalize text-left justify-start'>vj@minfoail.com</span>
-                                            </div>
-                                        </Button>
+                                    {
+                                        windowWidth > 992 &&(
+                                            <li>
+                                        <div onClick={handleClick} className=' !text-[#000] myAccountWrap flex items-center gap-2 cursor-pointer rounded-full lg:rounded-sm lg:p-1 bg-[#e1e1e16b]'>
+                                            <Button className='!w-[40px] !min-w-[40px] !h-[40px] !rounded-full'><FaUserCircle className='lg:text-[22px] text-[18px] text-[rgba(0,0,0,0.9)]' /></Button>
+                                            {
+                                                windowWidth > 992 && (
+                                                    <div className="info flex flex-col">
+                                                        <h5 className="text-[#000] text-[12px] !font-[500]">Vijay Saini</h5>
+                                                        <h6 className="text-[#000] text-[10px] !font-[400]">vj@testinfogmail.com</h6>
+                                                    </div>
+                                                )
+                                            }
+                                        </div>
 
                                         <Menu
                                             anchorEl={anchorEl}
@@ -163,12 +178,15 @@ const Header = () => {
                                                 </MenuItem>
                                             </Link>
                                         </Menu>
+                                    </li>
+                                        )
+                                    }
                                     </>
                                 )
                             }
 
 
-                            <li>
+                            {/* <li>
                                 <Tooltip title="Compare">
                                     <IconButton aria-label="cart">
                                         <StyledBadge sx={{ ".MuiBadge-badge": { backgroundColor: "#ff5252" } }} badgeContent={4} color="secondary">
@@ -176,17 +194,23 @@ const Header = () => {
                                         </StyledBadge>
                                     </IconButton>
                                 </Tooltip>
-                            </li>
+                            </li> */}
 
-                            <li>
-                                <Tooltip title="Wish-list">
-                                    <IconButton aria-label="cart">
-                                        <StyledBadge sx={{ ".MuiBadge-badge": { backgroundColor: "#ff5252" } }} badgeContent={4} color="secondary">
-                                            <MdOutlineFavoriteBorder />
-                                        </StyledBadge>
-                                    </IconButton>
-                                </Tooltip>
-                            </li>
+                            {
+                                windowWidth > 992 && (
+                                    <li>
+                                        <Tooltip title="Wish-list">
+                                            <IconButton aria-label="cart">
+                                                <StyledBadge sx={{ ".MuiBadge-badge": { backgroundColor: "#ff5252" } }} badgeContent={4} color="secondary">
+                                                    <MdOutlineFavoriteBorder />
+                                                </StyledBadge>
+                                            </IconButton>
+                                        </Tooltip>
+                                    </li>
+                                )
+                            }
+
+                            
 
                             <li>
                                 <Tooltip title="Cart">
@@ -203,8 +227,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-
-            <Navigation />
+            <Navigation openCategoryPanel={openCategoryPanel} setOpenCategoryPanel={setOpenCategoryPanel} />
 
         </header>
 

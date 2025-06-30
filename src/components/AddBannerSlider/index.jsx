@@ -16,18 +16,26 @@ import bannerImg4 from '../../assets/images2/banner4.webp'
 // import bannerImg4 from '../../assets/images2/banner/banner4.webp'
 
 import BannerBox from '../BannerBox';
+import { useSelector } from 'react-redux';
 
 const  AddBannerSlider =({items})=>{
+    const windowWidth = useSelector((state)=>state.window.width)
     return (
         <>
          <Swiper
             modules={[Navigation,Autoplay]}
             spaceBetween={10}
             slidesPerView={items}
-            navigation={true}
+            navigation={windowWidth > 992 ? true : false}
             autoplay={{ delay: 3000 }}
             loop={true}
             className='smlButton'
+            breakpoints={{
+                330: { slidesPerView: 1, spaceBetween: 10 },
+                550: { slidesPerView: 2, spaceBetween: 10 },
+                900: { slidesPerView: 3, spaceBetween: 10 },
+                1100: { slidesPerView: 4, spaceBetween: 10 },
+              }}
         >
             <SwiperSlide>
                 <BannerBox image={bannerImg1} link={"/"} />

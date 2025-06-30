@@ -29,39 +29,43 @@ const Footer = () => {
     <>
         <footer className='py-6 bg-[#fafafa] '>
             <div className="container">
-                <div className="flex items-center justify-center gap-2 py-8 pb-8">
+                {/* flex w-full items-center justify-center gap-10 lg:gap-2 py-8 pb-8 overflow-x-scroll lg:overflow-hidden */}
+                <div className=" w-full flex items-center justify-start lg:justify-center gap-1 lg:gap-10 overflow-x-scroll xl:overflow-hidden">
 
-                    <div className="col flex items-center justify-center flex-col group w-[15%]">
-                        <FaShippingFast className='text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
+                <div className="lg:w-[15%] min-w-[200px] flex items-center justify-center flex-col group ">
+                        <FaShippingFast className='text-[30px] lg:text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
                         <h3 className='text-[16px] font-[600] mt-3'>Free Shipping</h3>
                         <p className='text-[12px] font-[500]'>For all orders over $100</p>
                     </div>
 
-                    <div className="col flex items-center justify-center flex-col group w-[15%]">
-                        <MdOutlineSettingsBackupRestore className='text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
-                        <h3 className='text-[16px] font-[600] mt-3'>30 Days Return</h3>
-                        <p className='text-[12px] font-[500]'>For an Exchange Product</p>
+                    <div className="flex items-center justify-center flex-col group lg:w-[15%] min-w-[200px]">
+                        <MdOutlineSettingsBackupRestore className='text-[30px] lg:text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
+                        <h3 className='text-[13px] lg:text-[16px] font-[600] mt-1 lg:mt-3'>30 Days Return</h3>
+                        <p className='text-[10px] lg:text-[12px] font-[500]'>For an Exchange Product</p>
                     </div>
 
-                    <div className="col flex items-center justify-center flex-col group w-[15%]">
-                        <BsWallet2 className='text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
+                    
+
+                    <div className="flex items-center justify-center flex-col group lg:w-[15%] min-w-[200px]">
+                        <BsWallet2 className='text-[30px] lg:text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
                         <h3 className='text-[16px] font-[600] mt-3'>Secure Payment</h3>
                         <p className='text-[12px] font-[500]'>Payment card Accepted</p>
                     </div>
 
-                    <div className="col flex items-center justify-center flex-col group w-[15%]">
-                        <IoGiftOutline className='text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
+                    <div className="flex items-center justify-center flex-col group  lg:w-[15%] min-w-[200px]">
+                        <IoGiftOutline className='text-[30px] lg:text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
                         <h3 className='text-[16px] font-[600] mt-3'>Special Gifts</h3>
                         <p className='text-[12px] font-[500]'>Our First Product Order</p>
                     </div>
 
-                    <div className="col flex items-center justify-center flex-col group w-[15%]">
-                        <BiSupport className='text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
+                    <div className="flex items-center justify-center flex-col group  lg:w-[15%] min-w-[200px]">
+                        <BiSupport className='text-[30px] lg:text-[40px] transition-all duration-300 group-hover:text-[var(--primary)] group-hover:-translate-y-1' />
                         <h3 className='text-[16px] font-[600] mt-3'>Support 24/7</h3>
                         <p className='text-[12px] font-[500]'>Contact US Anytime</p>
                     </div>
 
                 </div>
+
                 <br/>
 
                 <hr />

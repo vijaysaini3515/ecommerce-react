@@ -26,9 +26,6 @@ const ProductDetailDialog = () => {
 
   return (
     <div>
-       <Button variant="outlined" onClick={() => dispatch(openDialog())}>
-        Open alert dialog
-      </Button>
       <Dialog
         open={openProductDetailDialog}
         onClose={handleCloseProductDetailDialog}

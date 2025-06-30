@@ -1,4 +1,6 @@
+import React,{ useEffect, useState } from 'react';
 import './App.scss';
+// import './responsive.css';
 import Header from './components/Header'; 
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
@@ -15,9 +17,11 @@ import MyList from './components/MyList'
 import MyOrder from './components/MyOrder'
 import CartDrawer from './components/CartDrawer'
 import Checkout from './pages/Checkout';
+import WindowListener from './components/windowResize/WindowListener'
 
 
 const App = () => {
+
   return (
    <>
    <BrowserRouter>
@@ -37,6 +41,7 @@ const App = () => {
       </Routes>
       <Footer />
    </BrowserRouter>
+   <WindowListener />
    <ProductDetailDialog />
    </>
   )
