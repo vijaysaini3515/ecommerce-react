@@ -23,11 +23,14 @@ import cardImg5 from '../../assets/images2/card1.png';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import CartDrawer from '../CartDrawer';
+import { useSelector } from "react-redux";
+
 
 const Footer = () => {
+    const windowWidth = useSelector(state => state.window.width);
   return (
     <>
-        <footer className='py-6 bg-[#fafafa] '>
+        <footer className='py-3 lg:py-6 bg-[#fafafa] '>
             <div className="container">
                 {/* flex w-full items-center justify-center gap-10 lg:gap-2 py-8 pb-8 overflow-x-scroll lg:overflow-hidden */}
                 <div className=" w-full flex items-center justify-start lg:justify-center gap-1 lg:gap-10 overflow-x-scroll xl:overflow-hidden">
@@ -67,12 +70,11 @@ const Footer = () => {
                 </div>
 
                 <br/>
+                {windowWidth > 992 && <hr />}
 
-                <hr />
+                <div className="footer flex flex-col lg:flex-row px-3 lg:px-0 lg:py-8">
 
-                <div className="footer flex py-8">
-
-                    <div className="part1 w-[25%]  border-r border-[rgba(133,133,133,0.53)]">
+                    <div className={`part1 w-full lg:w-[25%] ${windowWidth > 992 && 'border-r border-[rgba(133,133,133,0.53)]'}`}>
                         <h2 className='text-[18px] font-[600] mb-4'>Contact us</h2>
                         <p className='text-[13px] font-[400] pb-4'>
                             classyShop - Mega Super store <br/> 
@@ -87,7 +89,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="part2 w-[40%] flex pl-5">
+                    <div className="part2 w-full lg:w-[40%] flex pl-0 lg:pl-5 mt-5 lg:mt-0">
                         <div className="part2_col1 w-[50%]">
                             <h2 className='text-[18px font-[600] mb-4'>Products</h2>
                             <ul className='list'>
@@ -138,13 +140,13 @@ const Footer = () => {
 
                     </div>
 
-                    <div className="part2 w-[35%] flex flex-col pr-8 pl-5">
-                        <h2 className='text-[18px] font-[600] mb-4'>Subscribe to newsletter</h2>
+                    <div className="part2 w-full lg:w-[35%] flex flex-col pl-0 lg:pl-5 mt-5 lg:mt-0">
+                        <h2 className='text-[18px] font-[600] mb-2 lg:mb-4'>Subscribe to newsletter</h2>
                         <p className='text-[13px] mb-2'>Subscribe to our latest newsletter to get news about special discounts.</p>
                         <form>
                             <input type="text" className='w-full h-[45px] border outline-none pl-4 pr-4  rounded-sm mb-4 focus:border-[rgba(0,0,0,0.1)]' placeholder='enter your email ...' />
                             <Button className='btn-org'>SUBSCRIBE</Button>
-                            <FormControlLabel sx={{'& .MuiCheckbox-root.Mui-checked': {color:'var(--primary)'},'.MuiFormControlLabel-label':{fontSize:"12px",color:"rgba(0,0,0,0.7)"}}} control={<Checkbox defaultChecked />} label="I am agree to the terms and conditions and the privacy policy" />
+                            <FormControlLabel className='mt-3 lg:mt-0 block w-full' sx={{'& .MuiCheckbox-root.Mui-checked': {color:'var(--primary)'},'.MuiFormControlLabel-label':{fontSize:"12px",color:"rgba(0,0,0,0.7)"}}} control={<Checkbox defaultChecked />} label="I am agree to the terms and conditions and the privacy policy" />
                         </form>
                     </div>
 
@@ -152,9 +154,9 @@ const Footer = () => {
             </div>
         </footer>
 
-        <div className="bottomStrip border-t border-[rgba(0,0,0,0.1)] py-3 bg-white">
-            <div className="container flex items-center justify-between">
-                <ul className="flex items-center gap-2">
+        <div className="bottomStrip border-t border-[rgba(0,0,0,0.1)] pt-3 pb-[70px] lg:pb-3  py-3 bg-white">
+            <div className="container flex items-center flex-col lg:flex-row justify-between gap-3 lg:gap-0">
+                <ul className="flex items-center gap-6 lg:gap-2">
                     <li className='list-none'>
                         <Link to="/" target='_blank' className='w-[35px] h-[35px] rounded-full border border-[rgba(0,0,0,0.6)] flex items-center justify-center group hover:bg-[var(--primary)]'>
                           <FaFacebookF className='text-[15px] group-hover:text-white' />
@@ -182,9 +184,9 @@ const Footer = () => {
                     </li>
                 </ul>
 
-                <p className='text-[13px] text-center mb-0'>© 2024 - Ecommerce Template</p>
+                <p className='!text-[16px] lg:text-[13px] text-center mb-0'>© 2024 - Ecommerce Template</p>
 
-                <div className="flex items-center gap-1">
+                <div className="flex items-center lg:gap-1 gap-2">
                     <img src={cardImg1} alt="card" />
                     <img src={cardImg2} alt="card" />
                     <img src={cardImg3} alt="card" />
@@ -192,7 +194,6 @@ const Footer = () => {
                     <img src={cardImg5} alt="card" />
                 </div>
             </div>
-            
         </div>
      <CartDrawer />
 

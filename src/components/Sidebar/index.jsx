@@ -6,9 +6,10 @@ import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
 import RangeSlider from 'react-range-slider-input';
+import { IoClose } from "react-icons/io5";
 import 'react-range-slider-input/dist/style.css';
 
-const Sidebar = () => {
+const Sidebar = ({setSidebarVisible}) => {
 
   const [isOpenCategoryFilter,setIsOpenCategoryFilter] = useState(true);
   const [isOpenAvailableFilter,setIsOpenAvailableFilter] = useState(true);
@@ -27,10 +28,13 @@ const Sidebar = () => {
 
 
   return (
-   <aside className='sidebar '>
+   <aside className='sidebar'>
 
      <div className='box'>
-        <h3 className='w-full mb-3 text-[14px] font-[600] flex items-center pr-5'>
+        <div className='w-full flex justify-end'>
+          <IoClose className='text-[20px]' onClick={()=>setSidebarVisible(false)} />
+        </div>
+        <h3 className='w-full  mb-3 text-[14px] font-[600] flex items-center pr-5'>
           Shop By Category
           <Button onClick={()=>setIsOpenCategoryFilter(!isOpenCategoryFilter)} className='!h-[30px] !w-[30px] !min-w-[30px] !rounded-full !ml-auto'>
             {

@@ -35,7 +35,6 @@ const HomeSliderV2 = () => {
         <SwiperSlide>
             <div className="item w-full rounded-md overflow-hidden relative">
                <img src={sampleImg1} alt='homeV2'/>
-
                <div className="info absolute top-0 w-[60%] lg:w-[50%] h-[100%] z-50 p-4 lg:p-8 flex flex-col items-center justify-center -right-[100%] opacity-0 transition-all duration-700">
                     <h2 className='text-[10px] lg:text-[18px] hidden lg:block font-[500] mb-1 lg:mb-3 w-full text-left relative -right-[100%] opacity-0' >Big saving days sale</h2>
                     <h4 className='text-[12px] lg:text-[32px] font-[500] mb-1 lg:mb-3 w-full text-left relative -right-[100%] opacity-0'>Women Solid Rounded Green T-Shirt</h4>

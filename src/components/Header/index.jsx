@@ -76,8 +76,6 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -227,6 +225,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            
             <Navigation openCategoryPanel={openCategoryPanel} setOpenCategoryPanel={setOpenCategoryPanel} />
 
         </header>

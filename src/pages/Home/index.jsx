@@ -137,7 +137,7 @@ const Home = () =>{
                 </div>
             </section>
 
-            <section className="py-5 pt-0 pb-8 bg-white ">
+            <section className="lg:py-5 pt-0 lg:pb-8 bg-white ">
                 <div className="container">
                 <h3 className="text-[22px] font-[600]">Blog's</h3>
                     <Swiper

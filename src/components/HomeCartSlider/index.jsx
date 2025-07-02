@@ -39,7 +39,7 @@ const HomeCartSlider = () => {
                 <SwiperSlide>
                     <Link to="/">
                         <div className="item py-4 lg:px-3 lg:py-7 bg-white rounded-sm text-center flex flex-col items-center justify-center ">
-                            <img src={fashionImg} className='transition-all w-[60px] lg:w-[120px] w-[60px] lg:w-[120px] ' alt="" />
+                            <img src={fashionImg} className='transition-all w-[60px] lg:w-[120px]' alt="" />
                             <h3 className='text-[12px] lg:text-[16px]  font-[500] mt-3'>Fashion</h3>
                         </div>
                     </Link>
