@@ -62,9 +62,9 @@ const ProductListing = () => {
             <Sidebar setSidebarVisible={setSidebarVisible} />
           </div>
 
-          <div className={`rightContent w-full py-3 ${sidebarVisible || windowWidth >= 992 ? 'hidden' : 'block'}`}>
+          <div className={`rightContent bg-white w-full py-3 ${ sidebarVisible === true ? 'hidden' : 'block'}`}>
 
-            <div className="bg-[#f1f1f1] w-full p-2 mb-4 rounded-sm flex items-center justify-between">
+            <div className="bg-[#f1f1f1] sticky top-[0px] left-0 z-99 w-full p-2 mb-4 rounded-sm flex items-center justify-between">
                 <div className="col1 itemViewAction flex items-center">
                     <Button onClick={()=>setItemView('Grid')} className={`!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-[#000] ${itemView === 'Grid' && 'active'}`}>
                       <BsGridFill className='text-[rgba(0,0,0,0.7)]' />

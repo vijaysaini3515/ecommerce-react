@@ -8,9 +8,10 @@ import Rating from '@mui/material/Rating';
 import RangeSlider from 'react-range-slider-input';
 import { IoClose } from "react-icons/io5";
 import 'react-range-slider-input/dist/style.css';
+import { useSelector } from 'react-redux';
 
 const Sidebar = ({setSidebarVisible}) => {
-
+  const WindowWidth = useSelector((state)=>state.window.width)
   const [isOpenCategoryFilter,setIsOpenCategoryFilter] = useState(true);
   const [isOpenAvailableFilter,setIsOpenAvailableFilter] = useState(true);
   const [isOpenSizeFilter,setIsOpenSizeFilter] = useState(true);
@@ -31,9 +32,13 @@ const Sidebar = ({setSidebarVisible}) => {
    <aside className='sidebar'>
 
      <div className='box'>
-        <div className='w-full flex justify-end'>
-          <IoClose className='text-[20px]' onClick={()=>setSidebarVisible(false)} />
-        </div>
+        {
+          WindowWidth < 992 && (
+            <div className='w-full flex justify-end'>
+             <IoClose className='text-[20px]' onClick={()=>setSidebarVisible(false)} />
+            </div>
+          )
+        }
         <h3 className='w-full  mb-3 text-[14px] font-[600] flex items-center pr-5'>
           Shop By Category
           <Button onClick={()=>setIsOpenCategoryFilter(!isOpenCategoryFilter)} className='!h-[30px] !w-[30px] !min-w-[30px] !rounded-full !ml-auto'>

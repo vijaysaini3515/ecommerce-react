@@ -7,10 +7,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Navigation} from 'swiper/modules';
+import { useSelector } from "react-redux";
 
 
 const ProductZoom =()=>{
-
+  const windowWidth = useSelector((state)=>state.window.width)
   const [slideIndex,setSlideIndex] = useState(0);
 
   const zoomSlidBig = useRef()
@@ -27,20 +28,19 @@ const ProductZoom =()=>{
 
 
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col lg:flex-row gap-3">
 
-          <div className="slider w-[15%]">
+          <div className="slider w-full lg:w-[15%] order-2 lg:order-1">
             <Swiper
             ref={zoomSlidSml}
-              direction={"vertical"}
+              direction={windowWidth < 992 ? 'horizontal' : 'vertical'}
               modules={[Navigation]}
               spaceBetween={1}
               slidesPerView={4}
               navigation={true}
-              autoplay={{ delay: 3000 }}
-              // loop={true}
-              className="zoomProductSlider h-[400px] overflow-hidden"
+              className={`${windowWidth > 992 ? 'zoomProductSlider' : ''}  h-[auto] lg:h-[400px] overflow-hidden`}
              >
+
                 <SwiperSlide>
                     <div onClick={()=>goto(0)} className={`item rounded overflow-hidden cursor-pointer group ${slideIndex===0 ? 'opacity-100' : 'opacity-40'} `}>
                       <img className="w-full transition-all group-hover:scale-105 " src="https://serviceapi.spicezgold.com/download/1742462552739_siril-georgette-pink-color-saree-with-blouse-piece-product-images-rvrk9p11sk-0-202308161432.webp" alt="" />
@@ -61,12 +61,10 @@ const ProductZoom =()=>{
                       <img className="w-full transition-all group-hover:scale-105 " src="https://serviceapi.spicezgold.com/download/1742462552744_siril-georgette-pink-color-saree-with-blouse-piece-product-images-rvrk9p11sk-1-202308161432.webp" alt="" />
                     </div>
                 </SwiperSlide>
-
-                
             </Swiper>        
           </div>
 
-          <div className="zoomContainer w-[85%]  overflow-hidden">
+          <div className="zoomContainer w-full lg:w-[85%] order-1 lg:order-2  overflow-hidden">
           <Swiper
               ref={zoomSlidBig}
               spaceBetween={0}

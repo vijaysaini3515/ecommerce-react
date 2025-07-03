@@ -12,12 +12,13 @@ const ProductDetailsComp = () => {
     const [productAction, setProductAction] = useState(null);
     return (
         <>
-            <h1 className='mb-2 text-[24px] font-[600]'>Embroidered Satin Saree Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptatem.</h1>
+            <h1 className='mb-2 text-[18px] lg:text-[24px] font-[600]'>Embroidered Satin Saree Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptatem.</h1>
+
             <div className="flex items-center gap-3">
                 <span className='text-gray-400 text-[13px]'>
                     Brands :
                     <span className='text-black font-[500] opacity-75'>
-                        all about you
+                    all about you
                     </span>
                 </span>
                 <Rating name="size-small" value={5} size="small" readOnly />
@@ -31,7 +32,7 @@ const ProductDetailsComp = () => {
             </div>
 
 
-            <p className='mt-3 mb-5 pr-10'>
+            <p className='mt-3 mb-5 lg:pr-10'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium officia dolor rem nostrum amet nisi quos at doloribus sunt quod recusandae dignissimos laudantium nemo, laborum voluptatibus asperiores iste dicta doloremque laboriosam beatae ex magni quaerat eius quis. Maiores, recusandae voluptatibus magnam dolorem quis velit amet.
             </p>
 
