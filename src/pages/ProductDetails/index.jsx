@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 
 import ProductSlider from '../../components/ProductSlider';
 import ProductDetailsComp from '../../components/ProductDetailsComp/index.jsx'
+import Reviews from '../../components/Reviews/index.jsx';
 
 
 
@@ -53,15 +54,15 @@ const ProductDetails = () => {
 
         <div className="container pt-10">
           <div className="flex items-center gap-8 mb-5">
-            <span onClick={() => setActiveTab(0)} className={`link text-[17px] cursor-pointer font-[500] ${activeTab === 0 && 'text-[var(--primary)]'}`}>Description</span>
-            <span onClick={() => setActiveTab(1)} className={`link text-[17px] cursor-pointer font-[500] ${activeTab === 1 && 'text-[var(--primary)]'}`}>Product Details</span>
-            <span onClick={() => setActiveTab(2)} className={`link text-[17px] cursor-pointer font-[500] ${activeTab === 2 && 'text-[var(--primary)]'}`}>Review (29)</span>
+            <span onClick={() => setActiveTab(0)} className={`link text-[14px] lg:text-[17px] cursor-pointer font-[500] ${activeTab === 0 && 'text-[var(--primary)] border-b'}`}>Description</span>
+            <span onClick={() => setActiveTab(1)} className={`link text-[14px] lg:text-[17px] cursor-pointer font-[500] ${activeTab === 1 && 'text-[var(--primary)] border-b'}`}>Product Details</span>
+            <span onClick={() => setActiveTab(2)} className={`link text-[14px] lg:text-[17px] cursor-pointer font-[500] ${activeTab === 2 && 'text-[var(--primary)] border-b'}`}>Review (29)</span>
           </div>
         </div>
 
         {
           activeTab === 0 && (
-            <div className="container shadow-md w-full py-5 px-8 rounded-md">
+            <div className="container shadow-md w-full p-2 lg:py-5 lg:px-8 rounded-md">
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
               </p>
@@ -88,7 +89,7 @@ const ProductDetails = () => {
         {
           activeTab === 1 && (
 
-            <div className="container shadow-md w-full py-5 px-8 rounded-md">
+            <div className="container shadow-md w-full p-2 lg:py-5 lg:px-8 rounded-md">
               <div class="relative overflow-x-auto">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -159,124 +160,8 @@ const ProductDetails = () => {
 
         {
           activeTab === 2 && (
-            <div className="container shadow-md w-full py-5 px-8 rounded-md">
-              <div className="w-full productReviewContainer">
-
-                <h2 className='text-[18px]'>Customer question & answers</h2>
-
-                <div className="reviewScroll w-full mt-5  pr-5  max-h-[300px] overflow-y-scroll overflow-x-hidden">
-
-                  <div className="review pt-5 pb-5 w-fill border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-
-                    <div className="info w-[60%] flex items-center gap-3">
-                      <div className="img h-[80px] w-[80px] overflow-hidden rounded-full">
-                        <img className="w-full" src="https://img.freepik.com/premium-vector/business-global-economy_24877-41082.jpg?semt=ais_hybrid" alt="" />
-                      </div>
-                      <div className="w-[80%]">
-                        <h4 className='text-[16px]'>Jofra Stiff</h4>
-                        <h5 className='text-[13px] mb-0'>2024-12-01</h5>
-                        <p className='!mb-0 !mt-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero, delectus maiores quos, repudiandae molestiae, quia deleniti recusandae odio quam odit. Nobis perferendis, excepturi natus at alias ullam soluta porro.</p>
-                      </div>
-
-                    </div>
-                    <Rating name="size-small" defaultValue={5} readOnly />
-                  </div>
-                  <div className="review pt-5 pb-5 w-fill border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-
-                    <div className="info w-[60%] flex items-center gap-3">
-                      <div className="img h-[80px] w-[80px] overflow-hidden rounded-full">
-                        <img className="w-full" src="https://img.freepik.com/premium-vector/business-global-economy_24877-41082.jpg?semt=ais_hybrid" alt="" />
-                      </div>
-                      <div className="w-[80%]">
-                        <h4 className='text-[16px]'>Jofra Stiff</h4>
-                        <h5 className='text-[13px] mb-0'>2024-12-01</h5>
-                        <p className='!mb-0 !mt-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero, delectus maiores quos, repudiandae molestiae, quia deleniti recusandae odio quam odit. Nobis perferendis, excepturi natus at alias ullam soluta porro.</p>
-                      </div>
-
-                    </div>
-                    <Rating name="size-small" defaultValue={5} readOnly />
-                  </div>
-                  <div className="review pt-5 pb-5 w-fill border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-
-                    <div className="info w-[60%] flex items-center gap-3">
-                      <div className="img h-[80px] w-[80px] overflow-hidden rounded-full">
-                        <img className="w-full" src="https://img.freepik.com/premium-vector/business-global-economy_24877-41082.jpg?semt=ais_hybrid" alt="" />
-                      </div>
-                      <div className="w-[80%]">
-                        <h4 className='text-[16px]'>Jofra Stiff</h4>
-                        <h5 className='text-[13px] mb-0'>2024-12-01</h5>
-                        <p className='!mb-0 !mt-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero, delectus maiores quos, repudiandae molestiae, quia deleniti recusandae odio quam odit. Nobis perferendis, excepturi natus at alias ullam soluta porro.</p>
-                      </div>
-
-                    </div>
-                    <Rating name="size-small" defaultValue={5} readOnly />
-                  </div>
-                  <div className="review pt-5 pb-5 w-fill border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-
-                    <div className="info w-[60%] flex items-center gap-3">
-                      <div className="img h-[80px] w-[80px] overflow-hidden rounded-full">
-                        <img className="w-full" src="https://img.freepik.com/premium-vector/business-global-economy_24877-41082.jpg?semt=ais_hybrid" alt="" />
-                      </div>
-                      <div className="w-[80%]">
-                        <h4 className='text-[16px]'>Jofra Stiff</h4>
-                        <h5 className='text-[13px] mb-0'>2024-12-01</h5>
-                        <p className='!mb-0 !mt-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero, delectus maiores quos, repudiandae molestiae, quia deleniti recusandae odio quam odit. Nobis perferendis, excepturi natus at alias ullam soluta porro.</p>
-                      </div>
-
-                    </div>
-                    <Rating name="size-small" defaultValue={5} readOnly />
-                  </div>
-                  <div className="review pt-5 pb-5 w-fill border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-
-                    <div className="info w-[60%] flex items-center gap-3">
-                      <div className="img h-[80px] w-[80px] overflow-hidden rounded-full">
-                        <img className="w-full" src="https://img.freepik.com/premium-vector/business-global-economy_24877-41082.jpg?semt=ais_hybrid" alt="" />
-                      </div>
-                      <div className="w-[80%]">
-                        <h4 className='text-[16px]'>Jofra Stiff</h4>
-                        <h5 className='text-[13px] mb-0'>2024-12-01</h5>
-                        <p className='!mb-0 !mt-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero, delectus maiores quos, repudiandae molestiae, quia deleniti recusandae odio quam odit. Nobis perferendis, excepturi natus at alias ullam soluta porro.</p>
-                      </div>
-
-                    </div>
-                    <Rating name="size-small" defaultValue={5} readOnly />
-                  </div>
-                  <div className="review pt-5 pb-5 w-fill border-b border-[rgba(0,0,0,0.1)] flex items-center justify-between">
-
-                    <div className="info w-[60%] flex items-center gap-3">
-                      <div className="img h-[80px] w-[80px] overflow-hidden rounded-full">
-                        <img className="w-full" src="https://img.freepik.com/premium-vector/business-global-economy_24877-41082.jpg?semt=ais_hybrid" alt="" />
-                      </div>
-                      <div className="w-[80%]">
-                        <h4 className='text-[16px]'>Jofra Stiff</h4>
-                        <h5 className='text-[13px] mb-0'>2024-12-01</h5>
-                        <p className='!mb-0 !mt-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero, delectus maiores quos, repudiandae molestiae, quia deleniti recusandae odio quam odit. Nobis perferendis, excepturi natus at alias ullam soluta porro.</p>
-                      </div>
-
-                    </div>
-                    <Rating name="size-small" defaultValue={5} readOnly />
-                  </div>
-
-                </div>
-
-                <div className="reviewForm bg-[#fafafa] p-4 rounded-md mt-5">
-                  <h2 className='text-[18px]'>Add a review </h2>
-                  <form className='w-full  mt-5'>
-                    <TextField
-                      label='Write a review'
-                      fullWidth
-                      multiline
-                      rows={5}
-                    />
-                    <br/><br/>
-                    <Rating name="size-small" defaultValue={4} />
-                    <div className="flex items-center mt-5">
-                      <Button className='btn-org'>Submit Review</Button>
-                    </div>
-                  </form>
-                </div>
-
-              </div>
+            <div className="container shadow-none lg:shadow-md  w-full sm:width-[80%]  p-0 lg:py-5 lg:px-8 rounded-md">
+              <Reviews />
             </div>
           )
         }

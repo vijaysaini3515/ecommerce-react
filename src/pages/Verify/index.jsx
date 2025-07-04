@@ -58,8 +58,8 @@ const Verify = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center m-10">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <div className="flex flex-col items-center justify-center m-3 sm:m-10">
+      <div className="bg-white p-5 sm:p-8 rounded-lg shadow-md w-full max-w-md">
         <div className="img overflow-hidden flex items-center justify-center">
           <img width='80' src={ShieldImg} alt="" />
         </div>
@@ -73,7 +73,7 @@ const Verify = () => {
               key={index}
               type="text"
               maxLength={1}
-              className="w-12 h-12 border border-gray-300 text-center text-xl rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-10 h-10 sm:w-12 sm:h-12 border border-gray-300 text-center text-xl rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={otp[index]}
               onChange={(e) => handleChange(e.target, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}

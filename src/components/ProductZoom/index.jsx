@@ -37,8 +37,8 @@ const ProductZoom =()=>{
               modules={[Navigation]}
               spaceBetween={1}
               slidesPerView={4}
-              navigation={true}
-              className={`${windowWidth > 992 ? 'zoomProductSlider' : ''}  h-[auto] lg:h-[400px] overflow-hidden`}
+              navigation={windowWidth > 992 ? true : false}
+              className={`zoomProductSlider h-[auto] lg:h-[400px] overflow-hidden`}
              >
 
                 <SwiperSlide>
@@ -61,6 +61,7 @@ const ProductZoom =()=>{
                       <img className="w-full transition-all group-hover:scale-105 " src="https://serviceapi.spicezgold.com/download/1742462552744_siril-georgette-pink-color-saree-with-blouse-piece-product-images-rvrk9p11sk-1-202308161432.webp" alt="" />
                     </div>
                 </SwiperSlide>
+                
             </Swiper>        
           </div>
 

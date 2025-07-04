@@ -7,9 +7,9 @@ import { IoBagCheckOutline } from "react-icons/io5";
 
 const Checkout =()=>{
     return(
-        <section className="yuuu py-10">
-            <div className="container flex gap-5">
-                <div className="leftCol w-[75%]">
+        <section className="py-3 px-2 lg:py-10">
+            <div className="container flex flex-col lg:flex-row gap-5">
+                <div className="leftCol w-full lg:w-[75%]">
                     <div className="card bg-white p-5 shadow-md rounded-md w-full ">
                         <h1>Billing Details</h1>
                         <form className="w-full mt-5">
@@ -107,7 +107,7 @@ const Checkout =()=>{
                         </form>
                     </div>
                 </div>
-                <div className="leftCol w-[30%]">
+                <div className="leftCol w-full lg:w-[30%]">
                     <div className="card shadow-md bg-white p-5 rounded-md">
                         <h2 className="text-[22px]">Your Order</h2>
 

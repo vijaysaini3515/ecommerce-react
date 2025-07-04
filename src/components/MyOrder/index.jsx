@@ -22,14 +22,14 @@ const MyOrder = () => {
 
 
   return (
-    <div className='py-10 w-full'>
-            <div className="container flex gap-5">
+    <div className='py-5 lg:py-10 w-full'>
+            <div className="container flex flex-col lg:flex-row gap-5">
 
-                <div className="col1 w-[20%]">
+                <div className="col1 hidden lg:block w-[20%]">
                     <AccountSidebar />
                 </div>
 
-                <div className="col1 w-[80%]">
+                <div className="col1 w-full lg:w-[80%]">
                    <div className="bg-white shadow-md rounded-md">
                      <div className="py-5 px-3 border-b border-[#ccc]">
                         <h2>My orders</h2>

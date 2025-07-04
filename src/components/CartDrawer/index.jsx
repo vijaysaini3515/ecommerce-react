@@ -26,16 +26,25 @@ const CartDrawer = () => {
          onClose={()=>toggleCartDrawerHandler(false)}
          anchor="right"
          sx={{
-          width: 350, // Set your desired width here
-          flexShrink: 0, // Prevent drawer from shrinking
+          width: {
+            xs: 300,
+            sm: 350,
+            //  overflow:"hidden"
+          },
+          flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: 350, // Same width applied to the drawer paper
-            boxSizing: 'border-box' // Ensures padding or border doesn't affect the width
+            width: {
+              xs: 300,
+              sm: 350,
+              // overflow:"hidden"
+            },
+            boxSizing: 'border-box'
           }
         }}
+      
        >
 
-        <div className="flex items-center justify-between py-3 px-4 gap-3 border-b border-[rgba(0,0,0,0.4)]">
+        <div className="flex items-center justify-between p-1 lg:py-3 px-4 gap-3 border-b border-[rgba(0,0,0,0.4)]">
           <h4>Shopping Cart (3)</h4>
           <IoClose onClick={() => toggleCartDrawerHandler(false)}  className='text-[20px] cursor-pointer' />
         </div>
@@ -51,7 +60,7 @@ const CartDrawer = () => {
                 </Link>
               </div>
               <div className="info w-[75%] pr-5 relative">
-              <Link className="link transition-all" to='/product/9090'><h4 className="text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
+              <Link className="link transition-all" to='/product/9090'><h4 className="text-[12px] lg:text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
                 <p className="flex items-center gap-4 !mb-1 !mt-1">
                   <span>QTY : <span>4</span> </span>
                   <span className="text-[var(--primary)] font-bold">Price : $25</span>
@@ -67,7 +76,7 @@ const CartDrawer = () => {
                 </Link>
               </div>
               <div className="info w-[75%] pr-5 relative">
-              <Link className="link transition-all" to='/product/9090'><h4 className="text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
+              <Link className="link transition-all" to='/product/9090'><h4 className="text-[12px] lg:text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
                 <p className="flex items-center gap-4 !mb-1 !mt-1">
                   <span>QTY : <span>4</span> </span>
                   <span className="text-[var(--primary)] font-bold">Price : $25</span>
@@ -83,7 +92,7 @@ const CartDrawer = () => {
                 </Link>
               </div>
               <div className="info w-[75%] pr-5 relative">
-              <Link className="link transition-all" to='/product/9090'><h4 className="text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
+              <Link className="link transition-all" to='/product/9090'><h4 className="text-[12px] lg:text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
                 <p className="flex items-center gap-4 !mb-1 !mt-1">
                   <span>QTY : <span>4</span> </span>
                   <span className="text-[var(--primary)] font-bold">Price : $25</span>
@@ -99,7 +108,7 @@ const CartDrawer = () => {
                 </Link>
               </div>
               <div className="info w-[75%] pr-5 relative">
-              <Link className="link transition-all" to='/product/9090'><h4 className="text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
+              <Link className="link transition-all" to='/product/9090'><h4 className="text-[12px] lg:text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
                 <p className="flex items-center gap-4 !mb-1 !mt-1">
                   <span>QTY : <span>4</span> </span>
                   <span className="text-[var(--primary)] font-bold">Price : $25</span>
@@ -115,7 +124,7 @@ const CartDrawer = () => {
                 </Link>
               </div>
               <div className="info w-[75%] pr-5 relative">
-              <Link className="link transition-all" to='/product/9090'><h4 className="text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
+              <Link className="link transition-all" to='/product/9090'><h4 className="text-[12px] lg:text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
                 <p className="flex items-center gap-4 !mb-1 !mt-1">
                   <span>QTY : <span>4</span> </span>
                   <span className="text-[var(--primary)] font-bold">Price : $25</span>
@@ -131,7 +140,7 @@ const CartDrawer = () => {
                 </Link>
               </div>
               <div className="info w-[75%] pr-5 relative">
-              <Link className="link transition-all" to='/product/9090'><h4 className="text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
+              <Link className="link transition-all" to='/product/9090'><h4 className="text-[12px] lg:text-[14px] font-[500]">capsicum afasd  sdfasdf  asdfasdf  asdfasdf</h4></Link>
                 <p className="flex items-center gap-4 !mb-1 !mt-1">
                   <span>QTY : <span>4</span> </span>
                   <span className="text-[var(--primary)] font-bold">Price : $25</span>

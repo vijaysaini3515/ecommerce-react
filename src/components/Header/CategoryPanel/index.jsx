@@ -5,13 +5,15 @@ import { IoClose } from "react-icons/io5";
 import { Button, Divider } from '@mui/material';
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { FaRegSquareMinus } from "react-icons/fa6";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import logoImg from '../../../assets/images2/logo.jpg';
+import { useSelector } from 'react-redux';
 
 
 
 
 const CategoryPanel = ({ openCategoryPanel, toggleDrawer }) => {
-
+  const windowWidth = useSelector((state) => state.window.width)
   const [submenuIndex, setSubmenuIndex] = useState(null);
   const [InnerSubmenuIndex, setInnerSubmenuIndex] = useState(null);
 
@@ -36,6 +38,9 @@ const CategoryPanel = ({ openCategoryPanel, toggleDrawer }) => {
     <div>
       <Drawer open={openCategoryPanel}>
         <Box sx={{ width: 250 }} role="presentation">
+          <div className='bg-[#f1f1f1] p-2 my-1 mx-1 rounded-sm sm:rounded-md'>
+            <img src={logoImg} alt="" />
+          </div>
           <h3 className='p-3 text-[14px] font-[600] flex items-center justify-between'>Shop by categories <IoClose onClick={toggleDrawer(false)} className='text-[20px] cursor-pointer' /> </h3>
           <Divider />
           <div className='scroll'>
@@ -130,6 +135,13 @@ const CategoryPanel = ({ openCategoryPanel, toggleDrawer }) => {
 
             </ul>
           </div>
+          {
+            windowWidth < 992 && (
+              <div className="p-3">
+                <Button className='!w-full btn-org '>Login</Button>
+              </div>
+            )
+          }
         </Box>
       </Drawer>
     </div>
