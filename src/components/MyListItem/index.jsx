@@ -15,7 +15,7 @@ const MyListItem = () => {
         </div>
         <div className="info w-full lg:w-[85%] h-full relative">
             <IoClose className='absolute top-0 right-0 cursor-pointer text-[18px] lg:text-[22px] link transition-all' />
-            <span className=" text-[10px] lg:text-[13px]">Sangri</span>
+            <span className="text-[10px] lg:text-[13px]">Sangri</span>
             <h3 className="text-[12px] lg:text-[15px]">
                 <Link className="link">Embroidered Satin Saree Lorem ipsum dolor sit</Link>
             </h3>

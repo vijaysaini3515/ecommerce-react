@@ -40,7 +40,7 @@ const ProductDetails = () => {
 
       <section className='bg-white py-5'>
 
-        <div className="container flex flex-col lg:flex-row items-center gap-8">
+        <div className="container flex flex-col lg:flex-row items-center gap-2">
 
           <div className="productZoomContainer w-full lg:w-[40%]">
             <ProductZoom />

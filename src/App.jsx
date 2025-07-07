@@ -18,6 +18,7 @@ import MyOrder from './components/MyOrder'
 import CartDrawer from './components/CartDrawer'
 import Checkout from './pages/Checkout';
 import WindowListener from './components/windowResize/WindowListener'
+import Cart from './pages/Cart';
 
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/my-list" element={<MyList />} />
         <Route path="/my-orders" element={<MyOrder />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
    </BrowserRouter>

@@ -36,7 +36,6 @@ const CartDrawer = () => {
             width: {
               xs: 300,
               sm: 350,
-              // overflow:"hidden"
             },
             boxSizing: 'border-box'
           }

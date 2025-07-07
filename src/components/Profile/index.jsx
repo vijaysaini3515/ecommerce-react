@@ -63,7 +63,6 @@ const Profile = () => {
                                 <Button className='btn-border w-[100px]'>Cancel</Button>
                              </div>
                         </form>
-
                     </div>
 
                     {
